@@ -49,4 +49,7 @@ int main() {
     cout << sum << endl;
   }
 
+  //TIME COMPLEXITY
+  // O(N) + O(Q*N)
+
 }
