@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C++ File",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17", // Use C++17 standard
+        "-Wall", // Enable all warnings
+        "-Wextra", // Enable extra warnings
+        "-g", // Include debugging symbols
+        "${file}", // Current file to compile
+        "-o",
+        "build/${fileBasenameNoExtension}.exe" // Output file
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
