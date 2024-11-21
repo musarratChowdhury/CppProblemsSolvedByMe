@@ -20,7 +20,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "Run C++ Program with input and output"
+      "preLaunchTask": "Build C++ File"
     }
   ]
 }
