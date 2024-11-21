@@ -12,10 +12,59 @@
         "-g",
         "${file}",
         "-o",
-        "build/${fileBasenameNoExtension}.exe"
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.exe"
       ],
-      "group": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Compile and run",
+      "type": "shell",
+      "command": "",
+      "args": [
+        "copy",
+        "\"${file}\"",
+        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.cpp",
+        "&&",
+        "g++",
+        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.cpp",
+        "-o",
+        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+        "&&",
+        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe",
+        "<",
+        "input.txt",
+        ">",
+        "output.txt",
+        "&&",
+        "del",
+        "${fileBasenameNoExtension}.exe",
+        "&&",
+        "del",
+        "${workspaceFolder}\\build\\${fileBasenameNoExtension}.cpp"
+      ],
+      "presentation": {
+        "reveal": "never"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
     },
     {
       "type": "cppbuild",
