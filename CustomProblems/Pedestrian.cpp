@@ -1,10 +1,16 @@
+//
+// Created by User on 12/13/2024.
+//
+
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
 // if the fact >= 1000 then print the fact until that loop
 int main(){
-    
+
     int d,c,b,e,w;
 
     cin>>d>>c>>b>>e>>w;
