@@ -1,15 +1,9 @@
 //
-// Created by User on 11/10/2024.
+// Created by User on 5/10/2025.
 //
 #include <bits/stdc++.h>
 
 using namespace std;
-
-// https://cses.fi/problemset/task/1084
-
-const int N = 2e5+10;
-int a[N];
-
 
 int main(){
     int n;// number of apartments;
