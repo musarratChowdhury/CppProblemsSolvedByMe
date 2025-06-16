@@ -47,6 +47,7 @@ int main()
 	valley_L[0] = heights[0];
 	valley_R[N-1] = heights[N-1];
 
+	cout << valley_L[0] << " "; 
 	for (int i = 1; i < N; ++i)
 	{
 		valley_L[i] = max(valley_L[i - 1], heights[i]);
