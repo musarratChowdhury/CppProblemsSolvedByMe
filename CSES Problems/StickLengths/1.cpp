@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	std::vector<int> v;
+	std::vector<long> v;
 
 	int N;
 	cin >> N;
@@ -22,10 +22,21 @@ int main()
 	
 
 	sort(v.begin(), v.end());
+	// for (int i = 0; i < N; ++i)
+	// {
+	// 	/* code */
+	// 	cout << v[i] << " ";
+	// }
+	// cout << " " << endl;
+
+	int median = v[ceil(N/2)];
+
+	long min_cost = 0;
 	for (int i = 0; i < N; ++i)
 	{
 		/* code */
-		cout << v[i] << " ";
+		min_cost+=abs(v[i] - median);
 	}
-	cout << " " << endl;
+
+	cout<<min_cost<<endl;
 }
