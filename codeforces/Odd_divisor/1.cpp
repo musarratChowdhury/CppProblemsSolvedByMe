@@ -18,7 +18,7 @@ int main()
 		long long int x;
 		cin >> x;
 		if(isPowerOf2(x)){
-			cout <<  "NO" << endl;
+			cout << "NO" << endl;
 		}else {
 			cout << "YES" << endl;
 		}

@@ -28,6 +28,7 @@ int main()
 	//
 	sort(machine_times.begin(), machine_times.end());
 
+	// Brute force approach
 	// while(t>0){
 	//
 	// 	for (int i = 0; i < machine_times.size(); ++i)
