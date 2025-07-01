@@ -80,7 +80,7 @@ int main()
 		else low = mid + 1;
 	}
 
-	cout << low << "\n";
+	cout << high << "\n";
 
 	//total time will be max value of the pairs for each machine
 
