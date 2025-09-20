@@ -21,15 +21,23 @@ int removeElement(vector<int>& nums, int val) {
 }
 
 int main(){
-    
-    int x = 100;
-    //  cin >> x;
-    //
-    // cout<<x << endl;
+   //given a string , find the first non-repeating character in it:
+    string input  = "loveleetcode";
+    string input2 = "loveleetcode";
 
-    vector<int> v  = {3,2,2,3};
-    removeElement(v, 3);
+    map<char, int> charMap;
+
+    for (auto c : input) {
+       charMap[c]++;
+    }
+
+    for (int i=0; i<input.size(); i++) {
+        if (charMap[input[i]]==1){
+            cout<<input[i]<<" ";
+            break;
+        }
+    }
+
     return 0;
-
 }
 
