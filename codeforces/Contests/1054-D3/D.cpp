@@ -13,7 +13,7 @@ int main() {
     char s2[] = "abab";
 
     for (int i = 0; i < N; i++) {
-        cout << s2[i] << endl;
+        cout << s2[i] << '\n';
     }
 
     for (int j = 1; j < N; j+=2) {
@@ -24,7 +24,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         cout << s2[i];
     }
-    cout << endl;
+    cout << '\n';
 
     //how to find out that it is a continuous block or not
     return 0;
