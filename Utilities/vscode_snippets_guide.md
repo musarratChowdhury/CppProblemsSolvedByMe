@@ -1,0 +1,523 @@
+# VSCode Snippets for Competitive Programming
+
+## How to Create Custom Snippets in VSCode
+
+### 1. **Access Snippets Settings**
+- Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+- Type "Configure User Snippets"
+- Select "cpp" (for C++ files)
+- This opens `cpp.json` file
+
+### 2. **Snippet Structure**
+```json
+{
+    "snippet_name": {
+        "prefix": "trigger_text",
+        "body": [
+            "line 1 of code",
+            "line 2 of code",
+            "$1", // cursor position 1
+            "$2"  // cursor position 2
+        ],
+        "description": "What this snippet does"
+    }
+}
+```
+
+## Complete C++ Snippets for Competitive Programming
+
+Create or edit your `cpp.json` file with these snippets:
+
+```json
+{
+    "Competitive Programming Template": {
+        "prefix": "cpp_template",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "int main() {",
+            "    ios_base::sync_with_stdio(false);",
+            "    cin.tie(NULL);",
+            "    ",
+            "    $1",
+            "    ",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Basic competitive programming template"
+    },
+
+    "Test Cases Loop": {
+        "prefix": "test_cases",
+        "body": [
+            "int T;",
+            "cin >> T;",
+            "",
+            "while (T--) {",
+            "    $1",
+            "}"
+        ],
+        "description": "Test cases loop with T variable"
+    },
+
+    "Test Cases Loop with Counter": {
+        "prefix": "test_cases_counter",
+        "body": [
+            "int T;",
+            "cin >> T;",
+            "",
+            "for (int t = 1; t <= T; t++) {",
+            "    $1",
+            "}"
+        ],
+        "description": "Test cases loop with counter variable"
+    },
+
+    "For Loop": {
+        "prefix": "for_loop",
+        "body": [
+            "for (int i = 0; i < $1; i++) {",
+            "    $2",
+            "}"
+        ],
+        "description": "Basic for loop"
+    },
+
+    "For Loop with Index": {
+        "prefix": "for_loop_index",
+        "body": [
+            "for (int i = $1; i < $2; i++) {",
+            "    $3",
+            "}"
+        ],
+        "description": "For loop with custom start and end"
+    },
+
+    "While Loop": {
+        "prefix": "while_loop",
+        "body": [
+            "while ($1) {",
+            "    $2",
+            "}"
+        ],
+        "description": "Basic while loop"
+    },
+
+    "Vector Input": {
+        "prefix": "vector_input",
+        "body": [
+            "int n;",
+            "cin >> n;",
+            "vector<int> arr(n);",
+            "",
+            "for (int i = 0; i < n; i++) {",
+            "    cin >> arr[i];",
+            "}"
+        ],
+        "description": "Input vector with size"
+    },
+
+    "Vector Input with Size": {
+        "prefix": "vector_input_size",
+        "body": [
+            "vector<int> arr($1);",
+            "",
+            "for (int i = 0; i < $1; i++) {",
+            "    cin >> arr[i];",
+            "}"
+        ],
+        "description": "Input vector with known size"
+    },
+
+    "2D Vector Input": {
+        "prefix": "vector_2d_input",
+        "body": [
+            "int n, m;",
+            "cin >> n >> m;",
+            "vector<vector<int>> matrix(n, vector<int>(m));",
+            "",
+            "for (int i = 0; i < n; i++) {",
+            "    for (int j = 0; j < m; j++) {",
+            "        cin >> matrix[i][j];",
+            "    }",
+            "}"
+        ],
+        "description": "2D vector input"
+    },
+
+    "Array Input": {
+        "prefix": "array_input",
+        "body": [
+            "int n;",
+            "cin >> n;",
+            "int arr[n];",
+            "",
+            "for (int i = 0; i < n; i++) {",
+            "    cin >> arr[i];",
+            "}"
+        ],
+        "description": "Array input with size"
+    },
+
+    "String Input": {
+        "prefix": "string_input",
+        "body": [
+            "string s;",
+            "cin >> s;",
+            "$1"
+        ],
+        "description": "String input"
+    },
+
+    "Getline Input": {
+        "prefix": "getline_input",
+        "body": [
+            "string s;",
+            "getline(cin, s);",
+            "$1"
+        ],
+        "description": "Getline input for strings with spaces"
+    },
+
+    "Multiple Variables Input": {
+        "prefix": "multi_input",
+        "body": [
+            "int $1, $2;",
+            "cin >> $1 >> $2;",
+            "$3"
+        ],
+        "description": "Multiple variables input"
+    },
+
+    "Sort Vector": {
+        "prefix": "sort_vector",
+        "body": [
+            "sort($1.begin(), $1.end());",
+            "$2"
+        ],
+        "description": "Sort vector in ascending order"
+    },
+
+    "Sort Vector Descending": {
+        "prefix": "sort_desc",
+        "body": [
+            "sort($1.begin(), $1.end(), greater<int>());",
+            "$2"
+        ],
+        "description": "Sort vector in descending order"
+    },
+
+    "Custom Sort": {
+        "prefix": "custom_sort",
+        "body": [
+            "sort($1.begin(), $1.end(), [](const auto& a, const auto& b) {",
+            "    return $2;",
+            "});",
+            "$3"
+        ],
+        "description": "Custom sort with lambda function"
+    },
+
+    "Binary Search": {
+        "prefix": "binary_search",
+        "body": [
+            "int left = $1, right = $2;",
+            "while (left <= right) {",
+            "    int mid = left + (right - left) / 2;",
+            "    if ($3) {",
+            "        left = mid + 1;",
+            "    } else {",
+            "        right = mid - 1;",
+            "    }",
+            "}",
+            "$4"
+        ],
+        "description": "Binary search template"
+    },
+
+    "Two Pointers": {
+        "prefix": "two_pointers",
+        "body": [
+            "int left = 0, right = $1 - 1;",
+            "while (left < right) {",
+            "    $2",
+            "    ",
+            "    if ($3) {",
+            "        left++;",
+            "    } else {",
+            "        right--;",
+            "    }",
+            "}",
+            "$4"
+        ],
+        "description": "Two pointers technique"
+    },
+
+    "Sliding Window": {
+        "prefix": "sliding_window",
+        "body": [
+            "int left = 0;",
+            "for (int right = 0; right < $1; right++) {",
+            "    $2",
+            "    ",
+            "    while ($3) {",
+            "        $4",
+            "        left++;",
+            "    }",
+            "    ",
+            "    $5",
+            "}",
+            "$6"
+        ],
+        "description": "Sliding window technique"
+    },
+
+    "DFS Template": {
+        "prefix": "dfs",
+        "body": [
+            "void dfs(int node, vector<vector<int>>& graph, vector<bool>& visited) {",
+            "    visited[node] = true;",
+            "    ",
+            "    for (int neighbor : graph[node]) {",
+            "        if (!visited[neighbor]) {",
+            "            dfs(neighbor, graph, visited);",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "DFS template"
+    },
+
+    "BFS Template": {
+        "prefix": "bfs",
+        "body": [
+            "void bfs(int start, vector<vector<int>>& graph) {",
+            "    queue<int> q;",
+            "    vector<bool> visited(graph.size(), false);",
+            "    ",
+            "    q.push(start);",
+            "    visited[start] = true;",
+            "    ",
+            "    while (!q.empty()) {",
+            "        int node = q.front();",
+            "        q.pop();",
+            "        ",
+            "        for (int neighbor : graph[node]) {",
+            "            if (!visited[neighbor]) {",
+            "                visited[neighbor] = true;",
+            "                q.push(neighbor);",
+            "            }",
+            "        }",
+            "    }",
+            "}"
+        ],
+        "description": "BFS template"
+    },
+
+    "Union Find": {
+        "prefix": "union_find",
+        "body": [
+            "class UnionFind {",
+            "public:",
+            "    vector<int> parent, rank;",
+            "    ",
+            "    UnionFind(int n) : parent(n), rank(n, 0) {",
+            "        iota(parent.begin(), parent.end(), 0);",
+            "    }",
+            "    ",
+            "    int find(int x) {",
+            "        if (parent[x] != x) {",
+            "            parent[x] = find(parent[x]);",
+            "        }",
+            "        return parent[x];",
+            "    }",
+            "    ",
+            "    void unite(int x, int y) {",
+            "        int px = find(x), py = find(y);",
+            "        if (px == py) return;",
+            "        ",
+            "        if (rank[px] < rank[py]) swap(px, py);",
+            "        parent[py] = px;",
+            "        if (rank[px] == rank[py]) rank[px]++;",
+            "    }",
+            "};"
+        ],
+        "description": "Union Find (Disjoint Set Union) class"
+    },
+
+    "Prime Check": {
+        "prefix": "is_prime",
+        "body": [
+            "bool isPrime(int n) {",
+            "    if (n <= 1) return false;",
+            "    if (n <= 3) return true;",
+            "    if (n % 2 == 0 || n % 3 == 0) return false;",
+            "    ",
+            "    for (int i = 5; i * i <= n; i += 6) {",
+            "        if (n % i == 0 || n % (i + 2) == 0) {",
+            "            return false;",
+            "        }",
+            "    }",
+            "    return true;",
+            "}"
+        ],
+        "description": "Prime number check function"
+    },
+
+    "GCD Function": {
+        "prefix": "gcd",
+        "body": [
+            "int gcd(int a, int b) {",
+            "    return b == 0 ? a : gcd(b, a % b);",
+            "}"
+        ],
+        "description": "GCD function"
+    },
+
+    "Power Function": {
+        "prefix": "power",
+        "body": [
+            "long long power(long long base, long long exp, long long mod = LLONG_MAX) {",
+            "    long long result = 1;",
+            "    base %= mod;",
+            "    ",
+            "    while (exp > 0) {",
+            "        if (exp & 1) {",
+            "            result = (result * base) % mod;",
+            "        }",
+            "        exp >>= 1;",
+            "        base = (base * base) % mod;",
+            "    }",
+            "    ",
+            "    return result;",
+            "}"
+        ],
+        "description": "Modular exponentiation function"
+    },
+
+    "Print Vector": {
+        "prefix": "print_vector",
+        "body": [
+            "for (int i = 0; i < $1.size(); i++) {",
+            "    cout << $1[i];",
+            "    if (i < $1.size() - 1) cout << \" \";",
+            "}",
+            "cout << endl;"
+        ],
+        "description": "Print vector with spaces"
+    },
+
+    "Print Array": {
+        "prefix": "print_array",
+        "body": [
+            "for (int i = 0; i < $1; i++) {",
+            "    cout << $2[i];",
+            "    if (i < $1 - 1) cout << \" \";",
+            "}",
+            "cout << endl;"
+        ],
+        "description": "Print array with spaces"
+    },
+
+    "Debug Print": {
+        "prefix": "debug",
+        "body": [
+            "#ifdef DEBUG",
+            "    cout << \"Debug: $1 = \" << $1 << endl;",
+            "#endif"
+        ],
+        "description": "Debug print statement"
+    },
+
+    "Fast I/O": {
+        "prefix": "fast_io",
+        "body": [
+            "ios_base::sync_with_stdio(false);",
+            "cin.tie(NULL);",
+            "cout.tie(NULL);"
+        ],
+        "description": "Fast I/O setup"
+    },
+
+    "Long Long": {
+        "prefix": "ll",
+        "body": [
+            "long long"
+        ],
+        "description": "long long type"
+    },
+
+    "Vector of Vectors": {
+        "prefix": "vector_2d",
+        "body": [
+            "vector<vector<int>> $1($2, vector<int>($3));"
+        ],
+        "description": "2D vector declaration"
+    },
+
+    "Set Operations": {
+        "prefix": "set_ops",
+        "body": [
+            "set<int> s;",
+            "s.insert($1);",
+            "s.erase($2);",
+            "auto it = s.find($3);",
+            "if (it != s.end()) {",
+            "    $4",
+            "}"
+        ],
+        "description": "Set operations"
+    },
+
+    "Map Operations": {
+        "prefix": "map_ops",
+        "body": [
+            "map<string, int> m;",
+            "m[\"$1\"] = $2;",
+            "auto it = m.find(\"$3\");",
+            "if (it != m.end()) {",
+            "    $4",
+            "}"
+        ],
+        "description": "Map operations"
+    },
+
+    "Priority Queue": {
+        "prefix": "priority_queue",
+        "body": [
+            "priority_queue<int> pq; // Max heap",
+            "priority_queue<int, vector<int>, greater<int>> min_pq; // Min heap",
+            "",
+            "pq.push($1);",
+            "int top = pq.top();",
+            "pq.pop();"
+        ],
+        "description": "Priority queue operations"
+    }
+}
+```
+
+## How to Use Snippets
+
+1. **Type the prefix** (e.g., `test_cases`)
+2. **Press Tab** to expand the snippet
+3. **Use Tab** to navigate between placeholder positions (`$1`, `$2`, etc.)
+4. **Press Enter** to finish editing
+
+## Example Usage
+
+- Type `test_cases` + Tab → Creates test case loop
+- Type `vector_input` + Tab → Creates vector input code
+- Type `binary_search` + Tab → Creates binary search template
+- Type `cpp_template` + Tab → Creates basic competitive programming template
+
+## Additional Tips
+
+1. **Customize prefixes** to match your coding style
+2. **Add more snippets** as you discover new patterns
+3. **Use descriptive prefixes** for easy recall
+4. **Group related snippets** with similar prefixes
+5. **Test snippets** to ensure they work correctly
+
+This setup will significantly speed up your competitive programming workflow!
