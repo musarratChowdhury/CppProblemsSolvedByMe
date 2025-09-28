@@ -1,6 +1,7 @@
 //
 // Created by User on 9/28/2025.
 //
+//https://codeforces.com/problemset/problem/459/A
 #include <bits/stdc++.h>
 using namespace std;
 
