@@ -15,12 +15,7 @@ rl.on('line', (line) => {
         return; 
     }
 
-    let participants = line.trim().split(' ').map(Number);
-    let T = participants[0];
-
-    participants.sort((a, b) => b - a);
-
-    console.log(participants.indexOf(T));
+    let input_array = line.trim().split(' ').map(Number);
 
     processed++;
     if (processed === t) {
