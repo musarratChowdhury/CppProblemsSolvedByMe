@@ -15,15 +15,17 @@ int main()
     //check if they can be a length of a square
     if (x1 == x2 || y1 == y2){
         int d = max(abs(x1-x2), abs(y1-y2));
-        int x3 = x2 + d;
-        int y3 = y2;
-        int x4 = x1 + d;
-        int y4 = y2;
 
+        if(x1 == x2){
+            cout << x1 + d << " " << y1 << " " << x2+d << " " << y2 << endl;
+        }else {
+            cout << x1 <<" "<< y1+d <<" "<< x2 <<" "<< y2+d << endl;
+        }
 
     }else if(abs(x1-x2) == abs(y1-y2)){
         //calculate the lenth from formula d = a*root(2)
         //then calc the coords
+        cout << x1 <<" "<< y2 <<" "<< x2 <<" "<< y1 << endl;
     }else{
         cout << -1 << endl;
     }
