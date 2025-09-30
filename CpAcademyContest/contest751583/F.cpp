@@ -16,17 +16,24 @@ int main() {
 
         string unique_s;
 
-        for(int i = 0; i < N; i++){
-            if(unique_s.find(tolower(s[i]),0) == string::npos){
-                unique_s.push_back(tolower(s[i]));
+        if(N<4){
+            cout << "NO" << '\n';
+        }else{
+            unique_s+=tolower(s[0]);
+            for(int i = 1; i < N; i++){
+
+                if(tolower(s[i-1])!=tolower(s[i])){
+                    unique_s+=tolower(s[i]);
+                }
+            }
+            // cout << unique_s << '\n';
+            if(unique_s.compare("meow") == 0){
+                cout <<"YES"<<'\n';
+            }else {
+                cout << "NO" << '\n';
             }
         }
 
-        if(unique_s == "meow"){
-            cout <<"YES"<<'\n';
-        }else {
-            cout << "NO" << '\n';
-        }
     }
 
     // cout << unique_s << '\n';
