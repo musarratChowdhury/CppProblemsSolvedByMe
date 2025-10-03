@@ -32,3 +32,9 @@
 *.app
 
 build/** */
+*.out
+*.exe
+*.bin
+a.out
+# Contest executable files
+CpAcademyContest/contest*/[A-Z]
