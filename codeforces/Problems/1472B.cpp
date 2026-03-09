@@ -16,8 +16,9 @@ int main() {
             total_w += arr[i];
         }
 
-        map<int, int> onesfreq;
+map<int, int> onesfreq;
         map<int, int> twosfreq;
+        map<int, int> freq;
 
         for (int i = 0; i < n; i++) {
             if (arr[i] == 1) {
@@ -31,9 +32,11 @@ int main() {
         if (total_w %2 != 0) {
             cout << "NO" << endl;
         }else {
-            if (twosfreq.size()>0 && onesfreq.size() == twosfreq.size()) {
+            if (twosfreq.size()>0 && onesfreq.size()>0 && onesfreq.size() == twosfreq.size()) {
                 cout << "YES" << endl;
-            } else if (onesfreq[1]%2==0 && twosfreq.size()==0) {
+            } else if (twosfreq.size()==0 && n%2==0) {
+                cout << "YES" << endl;
+            }else if (onesfreq.size() == 0 && n%2==0) {
                 cout << "YES" << endl;
             }
             else {
