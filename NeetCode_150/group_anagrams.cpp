@@ -5,7 +5,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<vector<string>> groupAnagrams(vector<string>& strs) {
+vector<vector<string>> groupAnagrams(vector<string>& strs) { // O(n * k * logk)
 
     unordered_map<string, vector<string>> result_map;
 
@@ -28,7 +28,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     return result;
 }
 
-vector<vector<string>> groupAnagrams_optimized(vector<string>& strs) {
+vector<vector<string>> groupAnagrams_optimized(vector<string>& strs) { // O(n * k)
 
     unordered_map<string, vector<string>> result_map;
     //we need a character frequency
